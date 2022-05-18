@@ -27,8 +27,8 @@ int	pop(t_stack *stack)
 
 	del_list = stack->first;
 	val =  del_list->data;
-	free(del_list->next);
 	stack->first = stack->first->next;
+	free(del_list);
 	stack->size--;
 	return val;
 }

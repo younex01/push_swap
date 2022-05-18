@@ -25,11 +25,16 @@ void	double_swap(t_stack *stack_a, t_stack *stack_b, char x)
 
 void	push_x(t_stack *stack_a, t_stack *stack_b, char x)
 {
-	push(stack_a , pop(stack_b));
 	if(x == 'a')
+	{
+		push(stack_a , pop(stack_b));
 		write(1,"pa\n",3);
+	}
 	if(x == 'b')
+	{
+		push(stack_b , pop(stack_a));
 		write(1,"pb\n",3);
+	}
 }
 
 void	rotate(t_stack *stack, char x)
