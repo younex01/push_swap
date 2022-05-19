@@ -17,6 +17,8 @@ void	swap(t_stack *stack, char	x)
 
 void	double_swap(t_stack *stack_a, t_stack *stack_b, char x)
 {
+	if (stack_a->size < 2 && stack_b->size < 2)
+		return ;
 	swap(stack_a, 0);
 	swap(stack_b, 0);
 	if(x)
@@ -25,6 +27,8 @@ void	double_swap(t_stack *stack_a, t_stack *stack_b, char x)
 
 void	push_x(t_stack *stack_a, t_stack *stack_b, char x)
 {
+	if(!stack_a->size)
+		return;
 	if(x == 'a')
 	{
 		push(stack_a , pop(stack_b));
@@ -42,6 +46,8 @@ void	rotate(t_stack *stack, char x)
 	t_list *courant;
 	int		val;
 
+	// if(stack->size < 2)
+	// 	return;
 	courant = stack->first;
 	val = courant->data;
 	while(courant->next)

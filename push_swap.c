@@ -17,18 +17,22 @@ int main(int argc, char *argv[])
 		push(stack_a, atoi(argv[i]));
 		i--;
 	}
-	desplay(stack_a);
 	stack_a = ps_prep(stack_a);
+	//desplay(stack_a);
+	
 	if(stack_a->size == 3)
 		ps_sort3(stack_a);
-	if(stack_a->size == 5)
+	if(stack_a->size <= 5)
 		ps_sort5(stack_a, stack_b);
 	if(stack_a->size > 5)
 	{
 		ps_sortUlti(stack_a, stack_b);
 	}
-	printf("\n");
-	desplay(stack_b);
-	printf("\n");
+	// printf("||B||\n");
+	// desplay(stack_b);
+	// printf("\n");
+	// printf("||A||\n");
+	// desplay(stack_a);
+	// printf("\n");
 	return 0;
 }

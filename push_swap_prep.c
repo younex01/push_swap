@@ -31,6 +31,8 @@ int *do_the_work(t_stack *stack, int *arr, int i, int j)
 				arr[i]++;
 			else if(courant_second->data > courant_first->data)
 				arr[j]++;
+			else
+				exit(2);//erorr fonction to edite
 			courant_second = courant_second->next;
 
 		}

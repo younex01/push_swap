@@ -2,34 +2,48 @@
 
 void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b)
 {
-	t_list	*courant;
 	int	val;
 	int	len;
 	int start;
-	int	i;
 
 	len = stack_a->size;
 	val = len/3;
 	start = 0;
-	i = 0;
 	while(stack_a->size > 3)
 	{
-		while(i < val - 1 && stack_a->size > len - val)
+		while(stack_b->size <= start + val)
 		{
-			if(stack_a->first->data < val -1 && stack_a->first->data >= start)
-			{
+			// if(stack_b->size > 2 && stack_b->first->data < start + val/2 && stack_a->first->data > val)
+			// 	double_rotate(stack_a, stack_b, 1);
+			if(stack_b->size > 2 && stack_b->first->data > start && stack_b->first->data < start + val/2)
+				rotate(stack_b, 'b');
+			if(stack_a->first->data <= start + val)
 				push_x(stack_a, stack_b, 'b');
-				i++;
-			}
 			else
 				rotate(stack_a, 'a');
 		}
-		val = (len - val)/3 + val;
-
+		start += val;
+		val = (stack_a->size)/3;
 	}
 	ps_sort3(stack_a);
+	t_list	*courant;
 	while(stack_b->size > 0)
 	{
-
+		int i = 0;
+		courant = stack_b->first;
+		while(courant->next != NULL)
+		{
+			if(courant->data == (stack_b->size - 1))
+				break;
+			i++;
+			courant = courant->next;
+		}
+		if (i > (stack_b->size / 2))
+		{while (stack_b->first->data != (stack_b->size - 1))
+			reverse_rotate(stack_b, 'b');}
+		else
+		{	while (stack_b->first->data != (stack_b->size - 1))
+				rotate(stack_b, 'b');}
+		push_x(stack_a, stack_b, 'a');
 	}
 }

@@ -30,6 +30,7 @@ int		rev_pop(t_stack *stack);
 void	push_x(t_stack *stack_a, t_stack *stack_b, char x);
 void	double_swap(t_stack *stack_a, t_stack *stack_b, char x);
 void	double_reverse_rotate(t_stack *stack_a, t_stack *stack_b, char x);
+void	double_rotate(t_stack *stack_a, t_stack *stack_b, char x);
 
 t_stack	*ps_prep(t_stack *stack);
 t_stack	*arr_to_stack(t_stack *stack,int *arr);
@@ -38,7 +39,6 @@ int 	*do_the_work(t_stack *stack, int *arr, int i, int j);
 
 void	ps_sort3(t_stack *stack);
 void	ps_sort5(t_stack *stack_a, t_stack *stack_b);
-void	ps_sort3for5(t_stack *stack);
 void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b);
 
 #endif
