@@ -1,29 +1,32 @@
 #include "push_swap.h"
 
-void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b)
+void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b,int k)
 {
 	int	val;
 	int	len;
 	int start;
 
 	len = stack_a->size;
-	val = len/3;
+	val = len/k;
 	start = 0;
 	while(stack_a->size > 3)
 	{
 		while(stack_b->size <= start + val)
 		{
-			// if(stack_b->size > 2 && stack_b->first->data < start + val/2 && stack_a->first->data > val)
-			// 	double_rotate(stack_a, stack_b, 1);
-			if(stack_b->size > 2 && stack_b->first->data > start && stack_b->first->data < start + val/2)
-				rotate(stack_b, 'b');
 			if(stack_a->first->data <= start + val)
 				push_x(stack_a, stack_b, 'b');
+			else if(stack_b->size > 2 && stack_b->first->data > start && stack_b->first->data < start + val/2)
+				double_rotate(stack_a, stack_b, 1); 
 			else
 				rotate(stack_a, 'a');
+			if(stack_b->size > 2 && stack_b->first->data > start && stack_b->first->data < start + val/2)
+				rotate(stack_b, 'b');
 		}
 		start += val;
-		val = (stack_a->size)/3;
+		if(val > k*2)
+			val = (stack_a->size) / k;
+		else
+			val = stack_a->size - 3;
 	}
 	ps_sort3(stack_a);
 	t_list	*courant;

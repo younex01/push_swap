@@ -39,6 +39,6 @@ int 	*do_the_work(t_stack *stack, int *arr, int i, int j);
 
 void	ps_sort3(t_stack *stack);
 void	ps_sort5(t_stack *stack_a, t_stack *stack_b);
-void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b);
+void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b,int k);
 
 #endif
