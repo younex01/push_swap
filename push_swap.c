@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	else if(stack_a->size <= 100)
 		ps_sortUlti(stack_a, stack_b,3);
 	else
-		ps_sortUlti(stack_a, stack_b,5);
+		ps_sortUltiX2(stack_a, stack_b,5);
 	// printf("||B||\n");
 	// desplay(stack_b);
 	// printf("\n");

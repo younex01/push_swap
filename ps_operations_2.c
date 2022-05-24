@@ -13,5 +13,5 @@ void	double_rotate(t_stack *stack_a, t_stack *stack_b, char x)
 	rotate(stack_a, 0);
 	rotate(stack_b, 0);
 	if(x)
-		write(1,"rr\n",4);
+		write(1,"rr\n",3);
 }

@@ -13,6 +13,7 @@ typedef	struct s_list{
 
 typedef	struct s_stack{
 	t_list	*first;
+	int	last;
 	int	size;
 }t_stack;
 
@@ -40,5 +41,6 @@ int 	*do_the_work(t_stack *stack, int *arr, int i, int j);
 void	ps_sort3(t_stack *stack);
 void	ps_sort5(t_stack *stack_a, t_stack *stack_b);
 void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b,int k);
+void	ps_sortUltiX2(t_stack *stack_a, t_stack *stack_b,int k);
 
 #endif

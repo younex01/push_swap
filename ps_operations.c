@@ -6,6 +6,8 @@ void	swap(t_stack *stack, char	x)
 
 	if (stack->size < 2)
 		return ;
+	if(stack->size == 2)
+		stack->last = stack->first->data;
 	swap = stack->first->next->data;
 	stack->first->next->data = stack->first->data;
 	stack->first->data = swap;
@@ -25,10 +27,14 @@ void	double_swap(t_stack *stack_a, t_stack *stack_b, char x)
 		write(1,"ss\n",3);
 }
 
-void	push_x(t_stack *stack_a, t_stack *stack_b, char x)
+void	push_x(t_stack *stack_a, t_stack *stack_b, char x) 
 {
 	if(!stack_a->size)
 		return;
+	if(stack_a->size == 1) //last added
+		stack_a->last = stack_a->first->data;
+	if(stack_b->size == 1)
+		stack_b->last = stack_b->first->data;
 	if(x == 'a')
 	{
 		push(stack_a , pop(stack_b));
@@ -41,7 +47,7 @@ void	push_x(t_stack *stack_a, t_stack *stack_b, char x)
 	}
 }
 
-void	rotate(t_stack *stack, char x)
+void	rotate(t_stack *stack, char x)//
 {
 	t_list *courant;
 	int		val;
@@ -56,6 +62,7 @@ void	rotate(t_stack *stack, char x)
 		courant = courant->next;
 	}
 	courant->data = val;
+	stack->last = val;//last added
 	if(x == 'a')
 		write(1,"ra\n",3);
 	if(x == 'b')
@@ -65,9 +72,8 @@ void	rotate(t_stack *stack, char x)
 void	reverse_rotate(t_stack *stack, char x)
 {
 	int		val;
-
-	val = rev_pop(stack);
-	push(stack, val);
+//last added
+	push(stack, rev_pop(stack));
 	if(x == 'a')
 		write(1,"rra\n",4);
 	if(x == 'b')

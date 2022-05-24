@@ -44,6 +44,7 @@ int	rev_pop(t_stack *stack)
 		del_stack =  del_stack->next;
 	}
 	val = del_stack->next->data;
+	stack->last = del_stack->data;
 	// free(del_stack->next);
 	del_stack->next = NULL;
 	stack->size--;
