@@ -18,9 +18,9 @@ typedef	struct s_stack{
 }t_stack;
 
 
-long	ft_atoi(char *str);
+void	ft_atoi(char *str,int *i,t_stack *stack_b);
 void	stack_init(t_stack *stack);
-void	push(t_stack *stack, int data);
+void	push(t_stack *stack, long data);
 int		pop(t_stack *stack);
 void	desplay(t_stack *stack);
 
@@ -37,6 +37,9 @@ t_stack	*ps_prep(t_stack *stack);
 t_stack	*arr_to_stack(t_stack *stack,int *arr);
 int 	*do_the_work(t_stack *stack, int *arr, int i, int j);
 
+//test
+void	ft_str_int(char *str,t_stack *stack_b);
+void switch_stacks(t_stack *stack_a, t_stack *stack_b);
 
 void	ps_sort3(t_stack *stack);
 void	ps_sort5(t_stack *stack_a, t_stack *stack_b);

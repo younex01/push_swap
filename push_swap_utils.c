@@ -1,26 +1,54 @@
 #include "push_swap.h"
 
-long	ft_atoi(char *str)
+void	ft_atoi(char *str,int *i,t_stack *stack_b)
 {
-	long	i;
-	long	j;
 	long	resulte;
+	int		j;
+	int		bool;
 
-	resulte = 0;
-	i = 0;
+	resulte  = 0;
 	j = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	bool = 0;
+	if (str[*i] == '+' || str[*i] == '-')
 	{
-		if (str[i] == '-')
+		if (str[*i] == '-')
 			j *= -1;
-		i++;
+		(*i)++;
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	while (str[*i] != ' ' && str[*i])
 	{
-		resulte = resulte * 10 + (str[i] - '0');
-		i++;
+		bool = 1;
+		if(str[*i] >= '0' && str[*i] <= '9')
+		{
+			resulte = resulte * 10 + (str[*i] - '0');
+			(*i)++;
+		}
+		else 
+			exit(1);
+		if(resulte > 2147483648)
+			exit(1);
 	}
-	return (resulte * j);
+	if(!bool)
+		exit(1);
+	push(stack_b, resulte * j);
+}
+
+
+
+
+void	ft_str_int(char *str,t_stack *stack_b)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] == ' ' )
+		i++;
+	if(!str[i])
+		exit(1);
+	while (str[i])
+	{
+		ft_atoi(str,&i,stack_b);
+		while (str[i] == ' ' )
+			i++;
+	}
 }

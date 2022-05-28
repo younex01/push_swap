@@ -1,20 +1,20 @@
 #include "push_swap.h"
 
-void	swap(t_stack *stack, char	x)
+void	swap(t_stack *stack, char x)
 {
 	int	swap;
 
 	if (stack->size < 2)
 		return ;
-	if(stack->size == 2)
+	if (stack->size == 2)
 		stack->last = stack->first->data;
 	swap = stack->first->next->data;
 	stack->first->next->data = stack->first->data;
 	stack->first->data = swap;
 	if (x == 'a')
-		write(1,"sa\n",3);
+		write(1, "sa\n", 3);
 	if (x == 'b')
-		write(1,"sb\n",3);
+		write(1, "sb\n", 3);
 }
 
 void	double_swap(t_stack *stack_a, t_stack *stack_b, char x)
@@ -23,8 +23,8 @@ void	double_swap(t_stack *stack_a, t_stack *stack_b, char x)
 		return ;
 	swap(stack_a, 0);
 	swap(stack_b, 0);
-	if(x)
-		write(1,"ss\n",3);
+	if (x)
+		write(1, "ss\n", 3);
 }
 
 void	push_x(t_stack *stack_a, t_stack *stack_b, char x) 
@@ -71,8 +71,6 @@ void	rotate(t_stack *stack, char x)//
 
 void	reverse_rotate(t_stack *stack, char x)
 {
-	int		val;
-//last added
 	push(stack, rev_pop(stack));
 	if(x == 'a')
 		write(1,"rra\n",4);

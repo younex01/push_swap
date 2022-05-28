@@ -32,7 +32,6 @@ void	ps_sortUltiX2(t_stack *stack_a, t_stack *stack_b,int k)
 	int x;
 	// else
 	// {x = stack_b->first->next->data;}
-	int j = 20;
 	while(stack_b->size)
 	{
 		int i = 0;

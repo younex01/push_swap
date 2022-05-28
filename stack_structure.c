@@ -5,7 +5,7 @@ void	stack_init(t_stack *stack){
 	stack->size = 0;
 }
 
-void	push(t_stack *stack, int data)
+void	push(t_stack *stack, long data)
 {
 	t_list	*new_list;
 
@@ -13,8 +13,10 @@ void	push(t_stack *stack, int data)
 	// if ((new_list = (t_list *) malloc(sizeof(t_list))) == NULL)
 	// 	return -1;
 	// if ((new_list->data = (int *) malloc(sizeof(int))) == NULL)
-	// 	return -1;	
-	new_list->data = data;
+	// 	return -1;
+	if(data > 2147483647)
+		exit(1);
+	new_list->data = (int)data;
 	new_list->next = stack->first;
 	stack->first = new_list;
 	stack->size++;
