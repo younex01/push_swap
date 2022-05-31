@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yelousse/Desktop/popo'
 cc -Wall -Wextra -Werror   -c -o push_swap.o push_swap.c
- 
 cc -Wall -Wextra -Werror   -c -o push_swap_utils.o push_swap_utils.c
 cc -Wall -Wextra -Werror   -c -o push_swap_prep.o push_swap_prep.c
 cc -Wall -Wextra -Werror   -c -o ps_operations.o ps_operations.c
@@ -9,7 +8,6 @@ cc -Wall -Wextra -Werror   -c -o ps_operations_2.o ps_operations_2.c
 cc -Wall -Wextra -Werror   -c -o stack_structure.o stack_structure.c
 cc -Wall -Wextra -Werror   -c -o sort_stacks_for_three.o sort_stacks_for_three.c
 cc -Wall -Wextra -Werror   -c -o sort_stack_for_five.o sort_stack_for_five.c
- 
 cc -Wall -Wextra -Werror   -c -o sort_stack_ultimate.o sort_stack_ultimate.c
 cc -Wall -Wextra -Werror   -c -o sort_stack_ultimateX2.o sort_stack_ultimateX2.c
 cc -Wall -Wextra -Werror push_swap.c push_swap_utils.c push_swap_prep.c ps_operations.c ps_operations_2.c stack_structure.c sort_stacks_for_three.c sort_stack_for_five.c sort_stack_ultimate.c sort_stack_ultimateX2.c -o push_swap
