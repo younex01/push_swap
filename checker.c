@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:13 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/06 18:40:56 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:00:38 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,27 @@
 void	ft_check_cmp(t_stack *stack_a, t_stack *stack_b, char *str)
 {
 	if(!ft_strncmp(str,"sa\n",3))
-		return (swap(stack_a, 'a'));
+		return (swap_Bonus(stack_a));
 	if(!ft_strncmp(str,"sb\n",3))
-		return (swap(stack_b, 'b'));
+		return (swap_Bonus(stack_b));
 	if(!ft_strncmp(str,"ss\n",3))
-		return (double_swap(stack_a, stack_b, 'w'));
+		return (double_swap_Bonus(stack_a, stack_b));
 	if(!ft_strncmp(str,"pa\n",3))
-		return (push_x(stack_a, stack_b, 'a'));
+		return (push_x_Bonus(stack_a, stack_b, 'a'));
 	if(!ft_strncmp(str,"pb\n",3))
-		return (push_x(stack_a, stack_b, 'b'));
+		return (push_x_Bonus(stack_a, stack_b, 'b'));
 	if(!ft_strncmp(str,"ra\n",3))
-		return (rotate(stack_a, 'a'));
+		return (rotate_Bonus(stack_a));
 	if(!ft_strncmp(str,"rb\n",3))
-		return (rotate(stack_b, 'b'));
+		return (rotate_Bonus(stack_b));
 	if(!ft_strncmp(str,"rra\n",4))
-		return (reverse_rotate(stack_a, 'a'));
+		return (reverse_rotate_Bonus(stack_a));
 	if(!ft_strncmp(str,"rrb\n",4))
-		return (reverse_rotate(stack_b, 'b'));
+		return (reverse_rotate_Bonus(stack_b));
 	if(!ft_strncmp(str,"rrr\n",4))
-		return (double_reverse_rotate(stack_a, stack_b, 'w'));
+		return (double_reverse_rotate_Bonus(stack_a, stack_b));
 	if(!ft_strncmp(str,"rr\n",3))
-		return (double_rotate(stack_a, stack_b, 'w'));
+		return (double_rotate_Bonus(stack_a, stack_b));
 
 }
 
