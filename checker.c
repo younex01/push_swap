@@ -6,13 +6,20 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:13 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/06 20:00:38 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/06 22:59:25 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //#include "get_next_line.h"
 
+int	ft_error(t_stack *stack_a,t_stack *stack_b)
+{
+	free(stack_a);
+	free(stack_b);
+	write(1,"Error\n",6);
+	exit(1);
+}
 
 void	ft_check_cmp(t_stack *stack_a, t_stack *stack_b, char *str)
 {
@@ -38,7 +45,8 @@ void	ft_check_cmp(t_stack *stack_a, t_stack *stack_b, char *str)
 		return (double_reverse_rotate_Bonus(stack_a, stack_b));
 	if(!ft_strncmp(str,"rr\n",3))
 		return (double_rotate_Bonus(stack_a, stack_b));
-
+	else
+		ft_error(stack_a, stack_b);
 }
 
 void	ft_sort(t_stack *stack_a, t_stack *stack_b)
