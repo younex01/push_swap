@@ -4,6 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
  
 // A structure to represent a stack
 typedef	struct s_list{
@@ -45,5 +49,17 @@ void	ps_sort3(t_stack *stack);
 void	ps_sort5(t_stack *stack_a, t_stack *stack_b);
 void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b,int k);
 void	ps_sortUltiX2(t_stack *stack_a, t_stack *stack_b,int k);
+//bonus
+int ft_is_sort(t_stack *stack_a, t_stack *stack_b);
+int	ft_strncmp(char *s1, char *s2, int n);
+//get_next_line
+
+char	*ft_strjoin(char *str1, char *str2);
+int		ft_strlen(char *str);
+char	*get_next_line(int fd);
+int		ft_find_next_line(char *stash);
+char	*ft_check_line(char *stash);
+char	*ft_rest(char *stash);
+int		ft_line_size(char *stash);
 
 #endif

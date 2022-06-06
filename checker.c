@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+//#include "get_next_line.h"
 
-void	ft_check_cmp(char *str)
+
+void	ft_check_cmp(t_stack *stack_a, t_stack *stack_b, char *str)
 {
 	if(!ft_strncmp(str,"sa\n",3))
 		return (swap(stack_a, 'a'));
@@ -39,17 +41,16 @@ void	ft_check_cmp(char *str)
 
 }
 
-int	ft_sort(t_stack stack_a, t_stack stack_b)
+void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	char *read;
-	int	cmp;
 
 	read = get_next_line(0);
 	while(read)
 	{
-		cmp = ft_check_cmp(read);
-		if(!cmp)
-			
+			ft_check_cmp(stack_a, stack_b, read);
+			free(read);
+			read = get_next_line(0);
 	}
 }
 
@@ -63,8 +64,8 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int j = 0;
-	t_stack* stack_a;
-	t_stack* stack_b;
+	t_stack *stack_a;
+	t_stack *stack_b;
 
 	i =1;
 	stack_a =  (t_stack *) malloc(sizeof(t_stack));
@@ -78,7 +79,8 @@ int main(int argc, char *argv[])
 	}
 	switch_stacks(stack_a,stack_b);
 	stack_a = ps_prep(stack_a);
-	if (ft_sort(stack_a, stack_b))
+	ft_sort(stack_a, stack_b);
+	if (ft_is_sort(stack_a, stack_b))
 		write(1,"OK\n",3);
 	else
 		write(1,"KO\n",3);
