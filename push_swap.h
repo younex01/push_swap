@@ -52,6 +52,15 @@ void	ps_sortUltiX2(t_stack *stack_a, t_stack *stack_b,int k);
 //bonus
 int ft_is_sort(t_stack *stack_a, t_stack *stack_b);
 int	ft_strncmp(char *s1, char *s2, int n);
+
+void	swap_Bonus(t_stack *stack);
+void	rotate_Bonus(t_stack *stack);
+void	reverse_rotate_Bonus(t_stack *stack);
+int		rev_pop_Bonus(t_stack *stack);
+void	push_x_Bonus(t_stack *stack_a, t_stack *stack_b, char x);
+void	double_swap_Bonus(t_stack *stack_a, t_stack *stack_b);
+void	double_reverse_rotate_Bonus(t_stack *stack_a, t_stack *stack_b);
+void	double_rotate_Bonus(t_stack *stack_a, t_stack *stack_b);
 //get_next_line
 
 char	*ft_strjoin(char *str1, char *str2);

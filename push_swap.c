@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:33 by yelousse          #+#    #+#             */
-/*   Updated: 2022/05/31 17:13:34 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/06 16:37:17 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void switch_stacks(t_stack *stack_a, t_stack *stack_b)
 int main(int argc, char *argv[])
 {
 	int i;
-	int j = 0;
 	t_stack* stack_a;
 	t_stack* stack_b;
 

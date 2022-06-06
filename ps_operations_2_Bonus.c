@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_operations_2.c                                  :+:      :+:    :+:   */
+/*   ps_operations_2_Bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:16 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/06 18:44:50 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:52:17 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	double_reverse_rotate(t_stack *stack_a, t_stack *stack_b, char x)
+void	double_reverse_rotate_Bonus(t_stack *stack_a, t_stack *stack_b)
 {
-	reverse_rotate(stack_a, 0);
-	reverse_rotate(stack_b, 0);
-	if(x)
-		write(1,"rrr\n",4);
+	reverse_rotate_Bonus(stack_a, 0);
+	reverse_rotate_Bonus(stack_b, 0);
 }
 
-void	double_rotate(t_stack *stack_a, t_stack *stack_b, char x)
+void	double_rotate_Bonus(t_stack *stack_a, t_stack *stack_b)
 {
-	rotate(stack_a, 0);
-	rotate(stack_b, 0);
-	if(x)
-		write(1,"rr\n",3);
+	rotate_Bonus(stack_a, 0);
+	rotate_Bonus(stack_b, 0);
 }
