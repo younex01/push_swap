@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:01 by yelousse          #+#    #+#             */
-/*   Updated: 2022/05/31 17:13:02 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:29:38 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	ft_atoi(char *str,int *i,t_stack *stack_b)
 			(*i)++;
 		}
 		else 
-			exit(1);
+			ft_error2(stack_b);
 		if(resulte > 2147483648)
-			exit(1);
+			ft_error2(stack_b);
 	}
 	if(!bool)
-		exit(1);
+		ft_error2(stack_b);
 	push(stack_b, resulte * j);
 }
 
@@ -56,7 +56,7 @@ void	ft_str_int(char *str,t_stack *stack_b)
 	while (str[i] == ' ' )
 		i++;
 	if(!str[i])
-		exit(1);
+		ft_error2(stack_b);
 	while (str[i])
 	{
 		ft_atoi(str,&i,stack_b);

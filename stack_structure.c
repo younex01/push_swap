@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_structure.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:53 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/06 18:51:06 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:30:31 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	push(t_stack *stack, long data)
 	// if ((new_list->data = (int *) malloc(sizeof(int))) == NULL)
 	// 	return -1;
 	if(data > 2147483647)
-		exit(1);
+		ft_error2(stack);
 	new_list->data = (int)data;
 	new_list->next = stack->first;
 	stack->first = new_list;

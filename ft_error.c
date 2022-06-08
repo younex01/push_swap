@@ -17,3 +17,10 @@ int	ft_error(t_stack *stack_a,t_stack *stack_b)
 	exit(1);
 }
 
+int	ft_error2(t_stack *stack)
+{
+	free(stack);
+	write(1,"Error\n",6);
+	exit(1);
+}
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_prep.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:27 by yelousse          #+#    #+#             */
-/*   Updated: 2022/05/31 17:13:28 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:30:58 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,7 @@ int	*do_the_work(t_stack *stack, int *arr, int i, int j)
 			else if (courant_second->data > courant_first->data)
 				arr[j]++;
 			else
-				{
-					write(1,"Error\n", 6);
-					free(stack);
-					exit(0);
-				}//erorr fonction to edite
+				ft_error2(stack);
 			courant_second = courant_second->next;
 		}
 		courant_first = courant_first->next;

@@ -73,5 +73,6 @@ int		ft_line_size(char *stash);
 
 void	ft_clear(t_stack *stack);
 int		ft_error(t_stack *stack_a,t_stack *stack_b);
+int		ft_error2(t_stack *stack);
 
 #endif

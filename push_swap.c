@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:33 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/06 16:37:17 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:47:43 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
 	t_stack* stack_a;
 	t_stack* stack_b;
 
-
+	if (argc > 1)
+	{
 	i =1;
 	stack_a =  (t_stack *) malloc(sizeof(t_stack));
 	stack_init(stack_a);
@@ -56,4 +57,8 @@ int main(int argc, char *argv[])
 	desplay(stack_a);
 	// printf("\n");
 	// return 0;
+	// while(1)
+	// {}
+	}
+	return (0);
 }
