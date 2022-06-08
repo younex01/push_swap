@@ -6,7 +6,7 @@
 /*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:33 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 17:47:43 by sismaili         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:21:36 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ int main(int argc, char *argv[])
 	
 	if(stack_a->size <= 3)
 		ps_sort3(stack_a);
-	else if(stack_a->size <= 5)
+	else if (stack_a->size == 4)
+		ps_sort4(stack_a, stack_b);
+	else if(stack_a->size == 5)
 		ps_sort5(stack_a, stack_b);
 	else if(stack_a->size <= 100)
 		ps_sortUlti(stack_a, stack_b,3);

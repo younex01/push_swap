@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:13 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/06 22:59:25 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:57:58 by sismaili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,22 +64,26 @@ int main(int argc, char *argv[])
 	int i;
 	t_stack *stack_a;
 	t_stack *stack_b;
-
-	i = 1;
-	stack_a =  (t_stack *) malloc(sizeof(t_stack));
-	stack_init(stack_a);
-	stack_b =  (t_stack *) malloc(sizeof(t_stack));
-	stack_init(stack_b);
-	while(i < argc)
+	
+	if(argc > 1)
 	{
-		ft_str_int(argv[i],stack_b);
-		i++;
+		i = 1;
+		stack_a =  (t_stack *) malloc(sizeof(t_stack));
+		stack_init(stack_a);
+		stack_b =  (t_stack *) malloc(sizeof(t_stack));
+		stack_init(stack_b);
+		while(i < argc)
+		{
+			ft_str_int(argv[i],stack_b);
+			i++;
+		}
+		switch_stacks(stack_a,stack_b);
+		stack_a = ps_prep(stack_a);
+		ft_sort(stack_a, stack_b);
+		if (ft_is_sort(stack_a, stack_b))
+			write(1,"OK\n",3);
+		else
+			write(1,"KO\n",3);	
 	}
-	switch_stacks(stack_a,stack_b);
-	stack_a = ps_prep(stack_a);
-	ft_sort(stack_a, stack_b);
-	if (ft_is_sort(stack_a, stack_b))
-		write(1,"OK\n",3);
-	else
-		write(1,"KO\n",3);
+	return (0);
 }

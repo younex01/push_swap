@@ -46,6 +46,7 @@ void	ft_str_int(char *str,t_stack *stack_b);
 void	switch_stacks(t_stack *stack_a, t_stack *stack_b);
 
 void	ps_sort3(t_stack *stack);
+void	ps_sort4(t_stack *stack_a, t_stack *stack_b);
 void	ps_sort5(t_stack *stack_a, t_stack *stack_b);
 void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b,int k);
 void	ps_sortUltiX2(t_stack *stack_a, t_stack *stack_b,int k);
