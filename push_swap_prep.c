@@ -21,6 +21,8 @@ t_stack	*ps_prep(t_stack *stack)
 	i = 0;
 	j = 0;
 	arr = (int *) malloc(sizeof(int) * stack->size);
+	if(!arr)
+		return (NULL);
 	arr = do_the_work(stack, arr, i, j);
 	stack = arr_to_stack(stack, arr);
 	return (stack);
@@ -47,6 +49,7 @@ int	*do_the_work(t_stack *stack, int *arr, int i, int j)
 			else
 				{
 					write(1,"Error\n", 6);
+					free(stack);
 					exit(0);
 				}//erorr fonction to edite
 			courant_second = courant_second->next;

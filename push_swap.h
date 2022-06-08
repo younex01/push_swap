@@ -43,15 +43,15 @@ int 	*do_the_work(t_stack *stack, int *arr, int i, int j);
 
 //test
 void	ft_str_int(char *str,t_stack *stack_b);
-void switch_stacks(t_stack *stack_a, t_stack *stack_b);
+void	switch_stacks(t_stack *stack_a, t_stack *stack_b);
 
 void	ps_sort3(t_stack *stack);
 void	ps_sort5(t_stack *stack_a, t_stack *stack_b);
 void	ps_sortUlti(t_stack *stack_a, t_stack *stack_b,int k);
 void	ps_sortUltiX2(t_stack *stack_a, t_stack *stack_b,int k);
 //bonus
-int ft_is_sort(t_stack *stack_a, t_stack *stack_b);
-int	ft_strncmp(char *s1, char *s2, int n);
+int 	ft_is_sort(t_stack *stack_a, t_stack *stack_b);
+int		ft_strncmp(char *s1, char *s2, int n);
 
 void	swap_Bonus(t_stack *stack);
 void	rotate_Bonus(t_stack *stack);
@@ -70,5 +70,8 @@ int		ft_find_next_line(char *stash);
 char	*ft_check_line(char *stash);
 char	*ft_rest(char *stash);
 int		ft_line_size(char *stash);
+
+void	ft_clear(t_stack *stack);
+int		ft_error(t_stack *stack_a,t_stack *stack_b);
 
 #endif

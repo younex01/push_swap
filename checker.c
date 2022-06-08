@@ -11,15 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include "get_next_line.h"
-
-int	ft_error(t_stack *stack_a,t_stack *stack_b)
-{
-	free(stack_a);
-	free(stack_b);
-	write(1,"Error\n",6);
-	exit(1);
-}
 
 void	ft_check_cmp(t_stack *stack_a, t_stack *stack_b, char *str)
 {
