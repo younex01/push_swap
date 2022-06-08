@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   stack_structure.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:53 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 17:30:31 by sismaili         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:36:44 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_init(t_stack *stack){
+void	stack_init(t_stack *stack)
+{
 	stack->first = NULL;
 	stack->size = 0;
 }
@@ -26,7 +27,7 @@ void	push(t_stack *stack, long data)
 	// 	return -1;
 	// if ((new_list->data = (int *) malloc(sizeof(int))) == NULL)
 	// 	return -1;
-	if(data > 2147483647)
+	if (data > 2147483647)
 		ft_error2(stack);
 	new_list->data = (int)data;
 	new_list->next = stack->first;
@@ -40,11 +41,11 @@ int	pop(t_stack *stack)
 	int		val;
 
 	del_list = stack->first;
-	val =  del_list->data;
+	val = del_list->data;
 	stack->first = stack->first->next;
 	free(del_list);
 	stack->size--;
-	return val;
+	return (val);
 }
 
 int	rev_pop(t_stack *stack)
@@ -53,26 +54,26 @@ int	rev_pop(t_stack *stack)
 	int		val;
 
 	del_stack = stack->first;
-	while(del_stack->next->next)
+	while (del_stack->next->next)
 	{
-		del_stack =  del_stack->next;
+		del_stack = del_stack->next;
 	}
 	val = del_stack->next->data;
 	stack->last = del_stack->data;
 	// free(del_stack->next);
 	del_stack->next = NULL;
 	stack->size--;
-	return val;
+	return (val);
 }
 
 void	desplay(t_stack *stack)
 {
-	t_list *courant;
+	t_list	*courant;
 
 	courant = stack->first;
-	while(courant)
+	while (courant)
 	{
-		printf("%d\n",courant->data);
+		printf("%d\n", courant->data);
 		courant = courant->next;
 	}
 }

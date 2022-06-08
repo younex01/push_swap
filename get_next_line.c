@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 00:28:59 by yelousse          #+#    #+#             */
-/*   Updated: 2022/04/20 21:08:20 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:05:37 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ char	*ft_rest(char *stash)
 	if (i >= len)
 	{	
 		free(stash);
-		return (NULL);
+		return (0);
 	}
 	tmp = malloc(len - i + 1);
 	if (!tmp)
-		return (NULL);
+		return (0);
 	while (stash[i + j])
 	{
 		tmp[j] = stash[i + j];
@@ -48,10 +48,10 @@ char	*ft_check_line(char *stash)
 
 	len = ft_line_size(stash);
 	if (!len)
-		return (NULL);
+		return (0);
 	line = malloc(len + 1);
 	if (!line)
-		return (NULL);
+		return (0);
 	i = 0;
 	while (stash[i])
 	{
@@ -88,14 +88,14 @@ char	*ft_loop(char *stash, int fd)
 
 	buffer = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
-		return (NULL);
+		return (0);
 	while (1)
 	{
 		nb = read(fd, buffer, BUFFER_SIZE);
 		if (nb == -1)
 		{
 			free(buffer);
-			return (NULL);
+			return (0);
 		}
 		buffer[nb] = 0;
 		if (nb == 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_prep.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sismaili <sismaili@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:27 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 17:30:58 by sismaili         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:11:49 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*ps_prep(t_stack *stack)
 	i = 0;
 	j = 0;
 	arr = (int *) malloc(sizeof(int) * stack->size);
-	if(!arr)
+	if (!arr)
 		return (NULL);
 	arr = do_the_work(stack, arr, i, j);
 	stack = arr_to_stack(stack, arr);
@@ -40,7 +40,7 @@ int	*do_the_work(t_stack *stack, int *arr, int i, int j)
 		j = -1;
 		courant_second = stack->first;
 		arr[i] = 0;
-		while	(++j < i)
+		while (++j < i)
 		{
 			if (courant_second->data < courant_first->data)
 				arr[i]++;
