@@ -14,7 +14,7 @@ int ft_is_sort(t_stack *stack_a, t_stack *stack_b)
         return(0);
     }
     courant = stack_a->first;
-    while(courant->data)
+    while(courant->next)
     {
         if(courant->data != i)
         {
