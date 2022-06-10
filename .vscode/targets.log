@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Jun  8 19:42:05 2022
+# Make data base, printed on Fri Jun 10 16:27:55 2022
 
 # Variables
 
@@ -45,7 +45,7 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 5)
 OBJS = ${SRC:.c=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cdzh0033gw/T/vscode-ipc-bfca9d44-4d02-4642-a7a7-678d838002e6.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cdzh0033gw/T/vscode-ipc-5f68951c-b64f-44de-9e2c-006d26036a90.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -61,11 +61,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.zcPZnxdg9P/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.5w1TjDAoGm/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 4)
-BNS_SRC = checker.c push_swap_utils.c ft_strncmp.c get_next_line.c get_next_line_utils.c push_swap_prep.c ps_operations_Bonus.c ps_operations_2_Bonus.c stack_structure.c ft_error.c
+BNS_SRC = checker.c push_swap_utils.c checker_utils.c ft_strncmp.c get_next_line.c get_next_line_utils.c push_swap_prep.c ps_operations_Bonus.c ps_operations_2_Bonus.c stack_structure.c ft_error.c
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -119,6 +119,7 @@ MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # environment
 TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cdzh0033gw/T/
 # automatic
+ 
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /Users/yelousse/Library/Application Support/Code/1.67.0-main.sock
@@ -131,7 +132,7 @@ MFLAGS = -Rrqp
 # makefile (from `Makefile', line 2)
 BONUS_NAME = checker
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2116
+XPC_SERVICE_NAME = com.microsoft.VSCode.1128
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -157,7 +158,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 62926
+VSCODE_PID = 902
 # variable set hash-table stats:
 # Load=73/1024=7%, Rehash=0, Collisions=5/109=5%
 
@@ -191,7 +192,7 @@ all,:
 # Not a target:
 push_swap.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 19:40:54
+#  Last modified 2022-06-10 16:23:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -220,7 +221,7 @@ all: push_swap
 # Not a target:
 push_swap.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 19:19:00
+#  Last modified 2022-06-09 18:58:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -241,7 +242,7 @@ checker_utils.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 19:41:39
+#  Last modified 2022-06-10 16:05:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -250,7 +251,6 @@ Makefile:
 # Not a target:
 ps_operations_Bonus.o:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -335,13 +335,14 @@ checker.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-checker: checker.o push_swap_utils.o ft_strncmp.o get_next_line.o get_next_line_utils.o push_swap_prep.o ps_operations_Bonus.o ps_operations_2_Bonus.o stack_structure.o ft_error.o
+checker: checker.o push_swap_utils.o checker_utils.o ft_strncmp.o get_next_line.o get_next_line_utils.o push_swap_prep.o ps_operations_Bonus.o ps_operations_2_Bonus.o stack_structure.o ft_error.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 20):
 	@$(CC) $(CFLAGS) $(BNS_SRC) -o $(BONUS_NAME)
 	@echo "Compiling Successfull"
+ 
 	
 
 # Not a target:
@@ -406,7 +407,7 @@ push_swap.o: push_swap.c push_swap.h
 
 push_swap: push_swap.o checker_utils.o push_swap_utils.o push_swap_prep.o ps_operations.o ps_operations_2.o stack_structure.o sort_stacks_for_three.o sort_stack_for_four.o sort_stack_for_five.o sort_stack_ultimate.o sort_stack_ultimateX2.o ft_error.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-08 19:41:13
+#  Last modified 2022-06-10 16:23:35
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -447,7 +448,7 @@ ps_operations_2.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=36/1024=4%, Rehash=0, Collisions=0/87=0%
+# Load=36/1024=4%, Rehash=0, Collisions=0/88=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -457,9 +458,8 @@ ps_operations_2.o:
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
- 
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jun  8 19:42:05 2022
+# Finished Make data base on Fri Jun 10 16:27:55 2022
 
  

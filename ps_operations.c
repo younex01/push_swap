@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:21 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 20:11:32 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:38:33 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	push_x(t_stack *stack_a, t_stack *stack_b, char x)
 {
 	if (!stack_a->size)
 		return ;
-	if (stack_a->size == 1) //last added
+	if (stack_a->size == 1)
 		stack_a->last = stack_a->first->data;
 	if (stack_b->size == 1)
 		stack_b->last = stack_b->first->data;
@@ -74,7 +74,7 @@ void	rotate(t_stack *stack, char x)
 		courant = courant->next;
 	}
 	courant->data = val;
-	stack->last = val;//last added
+	stack->last = val;
 	if (x == 'a')
 		write(1, "ra\n", 3);
 	if (x == 'b')

@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:01 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 20:12:48 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/09 16:56:36 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,4 @@ void	ft_str_int(char *str, t_stack *stack_b)
 			i++;
 	}
 }
+

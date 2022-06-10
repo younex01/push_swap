@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:13 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 20:37:47 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/10 16:00:17 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 void	ft_check_cmp(t_stack *stack_a, t_stack *stack_b, char *str)
 {
 	if (!ft_strncmp(str, "sa\n", 3))
-		return (swap_Bonus(stack_a));
+		return (swap_bonus(stack_a));
 	if (!ft_strncmp(str, "sb\n", 3))
-		return (swap_Bonus(stack_b));
+		return (swap_bonus(stack_b));
 	if (!ft_strncmp(str, "ss\n", 3))
-		return (double_swap_Bonus(stack_a, stack_b));
+		return (double_swap_bonus(stack_a, stack_b));
 	if (!ft_strncmp(str, "pa\n", 3))
-		return (push_x_Bonus(stack_a, stack_b, 'a'));
+		return (push_x_bonus(stack_a, stack_b, 'a'));
 	if (!ft_strncmp(str, "pb\n", 3))
-		return (push_x_Bonus(stack_a, stack_b, 'b'));
+		return (push_x_bonus(stack_a, stack_b, 'b'));
 	if (!ft_strncmp(str, "ra\n", 3))
-		return (rotate_Bonus(stack_a));
+		return (rotate_bonus(stack_a));
 	if (!ft_strncmp(str, "rb\n", 3))
-		return (rotate_Bonus(stack_b));
+		return (rotate_bonus(stack_b));
 	if (!ft_strncmp(str, "rra\n", 4))
-		return (reverse_rotate_Bonus(stack_a));
+		return (reverse_rotate_bonus(stack_a));
 	if (!ft_strncmp(str, "rrb\n", 4))
-		return (reverse_rotate_Bonus(stack_b));
+		return (reverse_rotate_bonus(stack_b));
 	if (!ft_strncmp(str, "rrr\n", 4))
-		return (double_reverse_rotate_Bonus(stack_a, stack_b));
+		return (double_reverse_rotate_bonus(stack_a, stack_b));
 	if (!ft_strncmp(str, "rr\n", 3))
-		return (double_rotate_Bonus(stack_a, stack_b));
+		return (double_rotate_bonus(stack_a, stack_b));
 	else
 		ft_error(stack_a, stack_b);
 }

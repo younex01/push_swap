@@ -1,13 +1,11 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yelousse/Desktop/push_swap'
 cc -Wall -Wextra -Werror -c push_swap.c -o push_swap.o
- 
 cc -Wall -Wextra -Werror -c checker_utils.c -o checker_utils.o
 cc -Wall -Wextra -Werror -c push_swap_utils.c -o push_swap_utils.o
 cc -Wall -Wextra -Werror -c push_swap_prep.c -o push_swap_prep.o
 cc -Wall -Wextra -Werror -c ps_operations.c -o ps_operations.o
 cc -Wall -Wextra -Werror -c ps_operations_2.c -o ps_operations_2.o
- 
 cc -Wall -Wextra -Werror -c stack_structure.c -o stack_structure.o
 cc -Wall -Wextra -Werror -c sort_stacks_for_three.c -o sort_stacks_for_three.o
 cc -Wall -Wextra -Werror -c sort_stack_for_four.c -o sort_stack_for_four.o

@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:53 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 20:36:44 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/10 18:04:25 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	rev_pop(t_stack *stack)
 	}
 	val = del_stack->next->data;
 	stack->last = del_stack->data;
-	// free(del_stack->next);
+	free(del_stack->next);
 	del_stack->next = NULL;
 	stack->size--;
 	return (val);

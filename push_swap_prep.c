@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:27 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 20:11:49 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/10 19:00:50 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ t_stack	*arr_to_stack(t_stack *stack, int *arr)
 		courant = courant->next;
 		i++;
 	}
+	free(arr);
 	return (stack);
 }
