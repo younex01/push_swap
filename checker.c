@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:13 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/10 16:00:17 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 19:26:11 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,31 +59,37 @@ void	switch_stacks(t_stack *stack_a, t_stack *stack_b)
 		push(stack_a, pop(stack_b));
 }
 
+void	ft_main(t_stack *stack_a, t_stack *stack_b)
+{
+	switch_stacks(stack_a, stack_b);
+	stack_a = ps_prep(stack_a);
+	ft_sort(stack_a, stack_b);
+	if (ft_is_sort(stack_a, stack_b))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+}
+
 int	main(int argc, char *argv[])
 {
-	int		i;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		i;
 
+	i = 0;
 	if (argc > 1)
 	{
-		i = 1;
 		stack_a = (t_stack *) malloc(sizeof(t_stack));
+		if (!stack_a)
+			return (0);
 		stack_init(stack_a);
 		stack_b = (t_stack *) malloc(sizeof(t_stack));
+		if (!stack_b)
+			return (0);
 		stack_init(stack_b);
-		while (i < argc)
-		{
+		while (++i < argc)
 			ft_str_int(argv[i], stack_b);
-			i++;
-		}
-		switch_stacks(stack_a, stack_b);
-		stack_a = ps_prep(stack_a);
-		ft_sort(stack_a, stack_b);
-		if (ft_is_sort(stack_a, stack_b))
-			write(1, "OK\n", 3);
-		else
-			write(1, "KO\n", 3);
+		ft_main(stack_a, stack_b);
 	}
 	return (0);
 }

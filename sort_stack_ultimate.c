@@ -6,25 +6,40 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:42 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/10 16:25:35 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 18:46:40 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_sort_ulti_loop1(t_stack *stack_a, t_stack *stack_b, int val, int s)
+void	ps_sort_ulti_lp1_pt1(t_stack *stack_a, t_stack *stack_b, int val, int s)
 {
-	while (stack_a->size > 3)
+	while (stack_b->size < s + val)
 	{
-		while (stack_b->size < s + val)
-		{
-			if (stack_a->first->data < s + val)
-				push_x(stack_a, stack_b, 'b');
-			else if (stack_b->size > 2 && stack_b->first->data >= s && stack_b->first->data < s + val / 2)
+		if (stack_a->first->data < s + val)
+			push_x(stack_a, stack_b, 'b');
+		else if (stack_b->size > 2 && stack_b->first->data > s)
+		{	
+			if (stack_b->first->data < s + val / 2)
 				double_rotate(stack_a, stack_b, 1);
 			else
 				rotate(stack_a, 'a');
 		}
+		else
+			rotate(stack_a, 'a');
+		if (stack_b->size > 2 && stack_b->first->data > s)
+		{
+			if (stack_b->first->data < s + val / 2)
+				rotate(stack_b, 'b');
+		}
+	}
+}
+
+void	ps_sort_ulti_loop1(t_stack *stack_a, t_stack *stack_b, int val, int s)
+{
+	while (stack_a->size > 3)
+	{
+		ps_sort_ulti_lp1_pt1(stack_a, stack_b, val, s);
 		s += val;
 		val = (stack_a->size) / 3;
 		if (stack_a->size < 10)

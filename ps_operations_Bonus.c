@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:21 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/10 18:26:47 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:33:28 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ void	push_x_bonus(t_stack *stack_a, t_stack *stack_b, char x)
 	if (stack_b->size == 1)
 		stack_b->last = stack_b->first->data;
 	if (x == 'a')
-		{
-			if(stack_b->size)
-				push(stack_a, pop(stack_b));
-			else
-				return ;
-		}
+	{
+		if (stack_b->size)
+			push(stack_a, pop(stack_b));
+		else
+			return ;
+	}
 	if (x == 'b')
-		{
-			if(stack_a->size)	
-				push(stack_b, pop(stack_a));
-			else
-				return ;
-		}
+	{
+		if (stack_a->size)
+			push(stack_b, pop(stack_a));
+		else
+			return ;
+	}
 }
 
 void	rotate_bonus(t_stack *stack)
@@ -62,7 +62,7 @@ void	rotate_bonus(t_stack *stack)
 	t_list	*courant;
 	int		val;
 
-	if(stack->size < 2)
+	if (stack->size < 2)
 		return ;
 	courant = stack->first;
 	val = courant->data;
@@ -77,8 +77,8 @@ void	rotate_bonus(t_stack *stack)
 
 void	reverse_rotate_bonus(t_stack *stack)
 {
-	if(stack->size < 2)
-	 	return;
-	if(stack->size > 1)
+	if (stack->size < 2)
+		return ;
+	if (stack->size > 1)
 		push(stack, rev_pop(stack));
 }

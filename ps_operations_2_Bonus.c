@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:16 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/10 18:11:01 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:34:18 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	double_reverse_rotate_bonus(t_stack *stack_a, t_stack *stack_b)
 {
-	(void)stack_b;
-	
 	reverse_rotate_bonus(stack_a);
 	reverse_rotate_bonus(stack_b);
 }

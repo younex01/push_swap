@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 13:57:39 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/09 18:58:02 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 20:08:22 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ void	push_x_bonus(t_stack *stack_a, t_stack *stack_b, char x);
 void	double_swap_bonus(t_stack *stack_a, t_stack *stack_b);
 void	double_reverse_rotate_bonus(t_stack *stack_a, t_stack *stack_b);
 void	double_rotate_bonus(t_stack *stack_a, t_stack *stack_b);
-//get_next_line
-char	*ft_strjoin(char *str1, char *str2);
 int		ft_strlen(char *str);
 char	*get_next_line(int fd);
 int		ft_find_next_line(char *stash);
@@ -83,6 +81,7 @@ int		ft_error2(t_stack *stack);
 int		ft_is_sort_ckeck(t_stack *stack);
 //added
 void	ft_main(t_stack *stack_a, t_stack *stack_b);
-int		ft_atoi_loop(t_stack *stack_b, char *str, int i, int *bool);
+void	ps_sort_ulti_x2_loop2_p1(t_stack *stack_a, t_stack *stack_b, int x);
+void	ps_sort_ulti_x2_loop2_p2(t_stack *stack_a, t_stack *stack_b, int x);
 
 #endif

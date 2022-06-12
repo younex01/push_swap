@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:33 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/10 19:29:58 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 20:21:48 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,12 @@ int	main(int argc, char *argv[])
 	{
 		i = 1;
 		stack_a = (t_stack *) malloc(sizeof(t_stack));
+		if (!stack_a)
+			return (0);
 		stack_init(stack_a);
 		stack_b = (t_stack *) malloc(sizeof(t_stack));
+		if (!stack_b)
+			return (0);
 		stack_init(stack_b);
 		while (i < argc)
 		{
@@ -73,4 +77,5 @@ int	main(int argc, char *argv[])
 		switch_stacks(stack_a, stack_b);
 		ft_main(stack_a, stack_b);
 	}
+	return (0);
 }

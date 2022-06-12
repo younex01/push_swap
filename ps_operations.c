@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:21 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/09 12:38:33 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:33:40 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	rotate(t_stack *stack, char x)
 	t_list	*courant;
 	int		val;
 
-	// if(stack->size < 2)
-	// 	return;
+	if (stack->size < 2)
+		return ;
 	courant = stack->first;
 	val = courant->data;
 	while (courant->next)

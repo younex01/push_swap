@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:53 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/10 18:04:25 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:20:45 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void	push(t_stack *stack, long data)
 	t_list	*new_list;
 
 	new_list = (t_list *) malloc(sizeof(t_list));
-	// if ((new_list = (t_list *) malloc(sizeof(t_list))) == NULL)
-	// 	return -1;
-	// if ((new_list->data = (int *) malloc(sizeof(int))) == NULL)
-	// 	return -1;
+	if (!new_list)
+		return ;
 	if (data > 2147483647)
 		ft_error2(stack);
 	new_list->data = (int)data;

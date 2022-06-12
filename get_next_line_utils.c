@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 00:29:22 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 20:04:47 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:51:50 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ char	*ft_strjoin(char *s1, char *s2)
 		len = ft_strlen(s1);
 	len += ft_strlen(s2);
 	str = (char *)malloc((len + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
+	if (!str)
+		return (0);
 	*str = 0;
 	ft_strlcat(str, s1);
 	ft_strlcat(str, s2);

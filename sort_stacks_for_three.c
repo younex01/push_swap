@@ -6,7 +6,7 @@
 /*   By: yelousse <yelousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:13:50 by yelousse          #+#    #+#             */
-/*   Updated: 2022/06/08 20:37:02 by yelousse         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:26:32 by yelousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,8 @@ void	ps_sort2(t_stack *stack)
 	}
 }
 
-void	ps_sort3(t_stack *stack)
+void	ps_sort3_do_the_work(t_stack *stack, int val1, int val2, int val3)
 {
-	t_list	*courant;
-	int		val1;
-	int		val2;
-	int		val3;
-
-	if (stack->size < 3)
-		return (ps_sort2(stack));
-	courant = stack->first;
-	val1 = courant->data;
-	val2 = courant->next->data;
-	val3 = courant->next->next->data;
 	if ((val1 > val2 && val2 > val3) && val1 > val3)
 	{	
 		swap(stack, 'a');
@@ -52,4 +41,20 @@ void	ps_sort3(t_stack *stack)
 	}
 	else if ((val1 < val2 && val2 < val3) && val3 > val1)
 		return ;
+}
+
+void	ps_sort3(t_stack *stack)
+{
+	t_list	*courant;
+	int		val1;
+	int		val2;
+	int		val3;
+
+	if (stack->size < 3)
+		return (ps_sort2(stack));
+	courant = stack->first;
+	val1 = courant->data;
+	val2 = courant->next->data;
+	val3 = courant->next->next->data;
+	ps_sort3_do_the_work(stack, val1, val2, val3);
 }
